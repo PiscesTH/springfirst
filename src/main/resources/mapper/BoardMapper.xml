@@ -23,10 +23,6 @@
         WHERE iboard = #{iboard}
     </select>
 
-    <delete id="delBoard">
-        DELETE FROM board
-        WHERE iboard = #{iboard}
-    </delete>
     <update id="updBoard">
         UPDATE board
         SET title = #{title},
@@ -34,4 +30,9 @@
         writer = #{writer}
         WHERE iboard = #{iboard}
     </update>
+
+    <delete id="delBoard">
+        DELETE FROM board
+        WHERE iboard = #{iboard}
+    </delete>
 </mapper>

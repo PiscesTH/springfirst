@@ -10,9 +10,9 @@ import java.util.List;
 
 @Mapper //빈 등록
 public interface BoardMapper {
-    int insBoard(BoardInsDto dto);
-    List<BoardVo> selBoardList();  //Mapper.xml 의 id 로 구분
+    int insBoard(BoardInsDto dto);   //Mapper.xml 의 id 로 구분
+    List<BoardVo> selBoardList();
     BoardDetailVo selBoardById(int iboard);
-    int delBoard(int iboard);
     int updBoard(BoardUpdDto dto);
+    int delBoard(int iboard);
 }
