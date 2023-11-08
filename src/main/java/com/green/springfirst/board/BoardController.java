@@ -15,7 +15,7 @@ import java.util.List;
 //빈 등록 : 객체생성 스프링 컨테이너가 함. 기본적으로 싱글톤으로 만들어줌.
 //클래스 위에 annotation 줘서 빈 등록 할 수 있음.  주소값 저장 & 전달.
 @RequiredArgsConstructor
-public class BoardController {      //로직 작업 X
+public class BoardController {      //로직 작업 X. 서비스를 호출하는 역할
     //  @Autowired : 빈 등록 된 것들 중에서 찾아서 주소값 받아옴. 대신 들어올 수 있는게 유일해야 한다.
     private final BoardService service; //주소값 받을 수 있으면 받아다준다 ?
 
@@ -37,7 +37,7 @@ public class BoardController {      //로직 작업 X
     }
 
     @DeleteMapping("/board/{iboard}")
-    public ResVo delRecord(@PathVariable int iboard) {
+    public ResVo delBoard(@PathVariable int iboard) {
         int result = service.delBoard(iboard);
         return new ResVo(result);
     }
