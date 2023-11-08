@@ -5,7 +5,7 @@
 <mapper namespace="com.green.springfirst.board.BoardMapper">
     <!-- 위 경로의 파일과 세트 ? -->
     <select id="selBoardList">
-        SELECT iboard, title, writer, created_At
+        SELECT iboard, title, writer, created_at
         FROM board
     </select>
 </mapper>
