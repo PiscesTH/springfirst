@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.springfirst.board.BoardMapper">
     <!-- 위 경로의 파일과 세트  -->
-    <!-- id 수 만큼 BoardMapper에 같은 수의 메서드 필요 -->
+    <!-- 인터페이스 BoardMapper에 id의 개수와 이름이 같은 메서드들이 필요 -->
     <insert id="insBoard">
         INSERT INTO board
         set title = #{title},
