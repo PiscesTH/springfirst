@@ -1,12 +1,12 @@
 package com.green.springfirst.board;
 
+import com.green.springfirst.ResVo;
 import com.green.springfirst.board.model.BoardDetailVo;
+import com.green.springfirst.board.model.BoardInsDto;
+import com.green.springfirst.board.model.BoardUpdDto;
 import com.green.springfirst.board.model.BoardVo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,10 +29,24 @@ public class BoardController {      //로직 작업 X
         return service.getBoardDetail(iboard);
     }
 
-    @PostMapping("board") //post 요청받고 응답
-    public int insBoard() {
-        return 1;
+    @PostMapping("/board") //post 요청받고 응답
+    //@ResponseBody  //@Controller 였으면 이걸 사용해야함. HTML로 받은 데이터 JSON으로 바꿔주는..?
+    public ResVo insBoard(@RequestBody BoardInsDto dto) { //JSON으로 받은 데이터 객체로 사용 ?
+        int result = service.insBoardData(dto);
+        return new ResVo(result);
     }
+
+    @DeleteMapping("/board/{iboard}")
+    public ResVo delRecord(@PathVariable int iboard) {
+        int result = service.delBoard(iboard);
+        return new ResVo(result);
+    }
+    @PutMapping("/board")
+    public ResVo putBoard(@RequestBody BoardUpdDto dto){
+        int result = service.putBoard(dto);
+        return new ResVo(result);
+    }
+
 }
 /*
 <http - method 통신 메소드>

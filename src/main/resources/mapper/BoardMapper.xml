@@ -5,6 +5,13 @@
 <mapper namespace="com.green.springfirst.board.BoardMapper">
     <!-- 위 경로의 파일과 세트  -->
     <!-- id 수 만큼 BoardMapper에 같은 수의 메서드 필요 -->
+    <insert id="insBoard">
+        INSERT INTO board
+        set title = #{title},
+        ctnts = #{ctnts},
+        writer = #{writer}
+    </insert>
+
     <select id="selBoardList">
         SELECT iboard, title, writer, created_at as createdAt
         FROM board
@@ -15,4 +22,16 @@
         FROM board
         WHERE iboard = #{iboard}
     </select>
+
+    <delete id="delBoard">
+        DELETE FROM board
+        WHERE iboard = #{iboard}
+    </delete>
+    <update id="updBoard">
+        UPDATE board
+        SET title = #{title},
+        ctnts = #{ctnts},
+        writer = #{writer}
+        WHERE iboard = #{iboard}
+    </update>
 </mapper>
