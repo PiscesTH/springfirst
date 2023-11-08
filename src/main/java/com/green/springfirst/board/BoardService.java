@@ -1,5 +1,6 @@
 package com.green.springfirst.board;
 
+import com.green.springfirst.board.model.BoardDetailVo;
 import com.green.springfirst.board.model.BoardVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -7,11 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service    //빈 등록
-@RequiredArgsConstructor
-public class BoardService {
+@RequiredArgsConstructor // 생성자 만들어줌.
+public class BoardService {     //로직 담당.
     private final BoardMapper mapper;
 
-    public List<BoardVo> getBoard(){
+
+
+    public List<BoardVo> getBoard() {
         return mapper.selBoardList();
+    }
+
+    public BoardDetailVo getBoardDetail(int iboard) {
+        return mapper.selBoardById(iboard);
     }
 }

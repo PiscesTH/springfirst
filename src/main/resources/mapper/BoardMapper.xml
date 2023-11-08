@@ -3,9 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.springfirst.board.BoardMapper">
-    <!-- 위 경로의 파일과 세트 ? -->
+    <!-- 위 경로의 파일과 세트  -->
+    <!-- id 수 만큼 BoardMapper에 같은 수의 메서드 필요 -->
     <select id="selBoardList">
-        SELECT iboard, title, writer, created_at
+        SELECT iboard, title, writer, created_at as createdAt
         FROM board
+    </select>
+
+    <select id="selBoardById">
+        SELECT iboard, title, ctnts, writer, created_at as createdAt
+        FROM board
+        WHERE iboard = #{iboard}
     </select>
 </mapper>
