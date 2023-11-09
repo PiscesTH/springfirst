@@ -1,5 +1,5 @@
 package com.green.springfirst.board;
-
+/*
 import com.green.springfirst.ResVo;
 import com.green.springfirst.board.model.BoardDetailVo;
 import com.green.springfirst.board.model.BoardInsDto;
