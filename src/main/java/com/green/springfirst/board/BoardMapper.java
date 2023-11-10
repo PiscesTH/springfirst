@@ -16,3 +16,4 @@ public interface BoardMapper {
     int updBoard(BoardUpdDto dto);
     int delBoard(int iboard);
 }
+

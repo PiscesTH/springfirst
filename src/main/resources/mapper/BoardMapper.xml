@@ -9,7 +9,7 @@
         INSERT INTO board
         set title = #{title},
         ctnts = #{ctnts},
-        writer = #{writer}
+        writer = #{writer}   <!-- 컬럼명 = #{멤버필드명} -->
     </insert>
 
     <select id="selBoardList">
