@@ -4,6 +4,7 @@ import com.green.springfirst.board.model.BoardDetailVo;
 import com.green.springfirst.board.model.BoardInsDto;
 import com.green.springfirst.board.model.BoardUpdDto;
 import com.green.springfirst.board.model.BoardVo;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
